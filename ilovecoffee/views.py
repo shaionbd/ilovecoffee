@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from datetime import timedelta
 from .models import Order
@@ -13,7 +13,6 @@ from rest_framework import mixins
 from rest_framework import permissions
 from rest_framework_jwt import authentication
 from rest_framework.response import Response
-from rest_framework.authtoken.models import Token
 from rest_framework_jwt.settings import api_settings
 
 
