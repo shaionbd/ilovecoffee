@@ -77,14 +77,19 @@ class UserListView(generics.GenericAPIView,
     def post(self, request):
         return self.create(request)
 
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+    # def perform_create(self, serializer):
+    #     serializer.save(user=self.request.user)
 
     def put(self, request, id=None):
+        # check auth user
+        # if id == self.request.user.id:
+        #     return self.update(request, id)
+        # else:
+        #     return JsonResponse({'message': 'You do not have permission'}, status=204)
         return self.update(request, id)
 
-    def perform_update(self, serializer):
-        serializer.save(user=self.request.user)
+    # def perform_update(self, serializer):
+    #     serializer.save(user=self.request.user)
 
     def delete(self, request, id=None):
         return self.destroy(request, id)
